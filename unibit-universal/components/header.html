@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="site-header-inner">
+  <div class="site-branding">
+    <img class="site-logo" alt="Site logo" src="{{ site.params.logo | relative_url }}"/>
+    <h1 class="site-title"><a href='{{ site.baseurl | relative_url }}'>{{ site.title }}</a></h1>
+  </div>
+  {% if site.menus.main %}
+  <nav class="site-navigation">
+    {% set menu = site.menus.main %}
+    {% set include_dict = {"menu": menu, "page": page} %}
+    {% include "menu.html" %}
+  </nav>
+  {% endif %}
+  </div>
+</header>

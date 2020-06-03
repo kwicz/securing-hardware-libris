@@ -1,0 +1,22 @@
+baseurl: "/"
+title: "Universal"
+params:
+  logo: 'images/logo.svg'
+  docs_url: 'https://docs.stackbit.com'
+menus:
+  main:
+    - identifier: home
+      weight: 1
+      url: /
+      title: Home
+  secondary:
+    - identifier: about
+      weight: 1
+      url: about
+      title: About
+sass:
+  input_file: sass/main.scss.njk
+  output_file: assets/css/main.css
+  indentWidth: 4
+  outputStyle: nested
+  precision: 10

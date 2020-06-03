@@ -1,0 +1,33 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+<h1>{{ page.title }}</h1>
+
+{{ page.content  }}
+
+<div class="features">
+  {% set features = getPages("/features") | sort(true, true, "date") %}
+  {% for feature in features %}
+  <div class="feature">
+    <div class="feature-inner">
+
+      {% if feature.params.image_thumbnail %}
+      <a class="feature-thumbnail" href="{{ feature.url | relative_url }}">
+        <img src="{{ feature.params.image_thumbnail | relative_url }}" alt="{{ feature.title }}" />
+      </a>
+      {% endif %}
+
+      <div class="feature-content">
+        <h2>
+          <a href="{{ feature.url | relative_url }}">{{ feature.params.title }}</a>
+        </h2>
+        <p>{{ feature.params.description }}</p>
+      </div>
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
