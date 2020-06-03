@@ -7,7 +7,9 @@
     "build": "unibit build",
     "develop": "unibit develop",
     "start": "unibit develop",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -18,12 +20,15 @@
   "bugs": {
     "url": "https://github.com/stackbithq/stackbit-theme-libris/issues"
   },
-  "homepage": "https://docs.stackbit.com/unibit/",
+  "homepage": "https://kwicz.github.io/securing-hardware-libris",
   "dependencies": {
     "@stackbit/unibit": "~0.1.11",
     "kind-of": "^6.0.3",
     "lodash": "^4.17.14",
     "minimist": "^1.2.5",
     "nodemon": "^1.19.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.0.0"
   }
 }
